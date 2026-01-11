@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import ContactForm from '@/components/ContactForm'
 
+export const dynamic = 'force-dynamic'
+
 export default function ContactPage() {
   return (
     <div className="relative min-h-screen w-full flex flex-col mesh-gradient overflow-hidden">
