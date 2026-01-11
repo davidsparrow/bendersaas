@@ -1,0 +1,7 @@
+node_modules
+.next
+.env.local
+.env*.local
+.DS_Store
+*.log
+stitch_bender_saas_home_featured_app_2

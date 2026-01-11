@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>App Feature Details Overlay</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ab2fee",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#1c1022",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"],
+                        "body": ["Montserrat", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .dimmed-content {
+            opacity: 0.3;
+            filter: blur(2px);
+        }
+        .overlay-bg {
+            background: rgba(18, 12, 22, 0.95);
+            backdrop-filter: blur(8px);
+        }
+        .marker-pulse {
+            box-shadow: 0 0 0 0 rgba(171, 47, 238, 0.7);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(171, 47, 238, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(171, 47, 238, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(171, 47, 238, 0); }
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white overflow-hidden">
+<!-- Dimmed Background Site Elements -->
+<div class="fixed inset-0 z-0 dimmed-content pointer-events-none p-10 flex flex-col justify-between">
+<header class="flex items-center justify-between border-b border-white/10 pb-6">
+<div class="flex items-center gap-4">
+<div class="size-8 bg-primary rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined">rocket_launch</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight">Boutique Dev House</h2>
+</div>
+<div class="flex gap-8 text-sm font-medium opacity-50">
+<span>Portfolio</span>
+<span>Services</span>
+<span>About</span>
+</div>
+</header>
+<footer class="flex justify-between items-center text-xs uppercase tracking-widest opacity-50">
+<span>© 2024 BOUTIQUE DEV HOUSE</span>
+<span>Based in San Francisco</span>
+</footer>
+</div>
+<!-- Main Overlay Container -->
+<div class="fixed inset-0 z-50 overlay-bg flex items-center justify-center overflow-y-auto">
+<div class="relative w-full max-w-[1200px] min-h-screen lg:min-h-0 py-12 px-6 flex flex-col items-center">
+<!-- Close Button -->
+<button class="absolute top-8 right-8 text-white/50 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-4xl">close</span>
+</button>
+<!-- Navigation Arrows -->
+<button class="fixed left-8 top-1/2 -translate-y-1/2 hidden xl:flex size-12 items-center justify-center rounded-full border border-white/10 bg-white/5 hover:bg-primary transition-all group">
+<span class="material-symbols-outlined group-hover:scale-110">arrow_back_ios_new</span>
+</button>
+<button class="fixed right-8 top-1/2 -translate-y-1/2 hidden xl:flex size-12 items-center justify-center rounded-full border border-white/10 bg-white/5 hover:bg-primary transition-all group">
+<span class="material-symbols-outlined group-hover:scale-110">arrow_forward_ios</span>
+</button>
+<!-- Header Section -->
+<div class="w-full text-center mb-8">
+<h1 class="text-white tracking-tight text-4xl lg:text-5xl font-bold leading-tight px-4 pb-2">Project Detail: User Dashboard</h1>
+<p class="text-[#af9db9] text-lg font-normal leading-normal px-4 font-body">Real-time Analytics &amp; Data Visualization for Fintech Ecosystems</p>
+</div>
+<!-- Central Visual Container -->
+<div class="relative w-full max-w-4xl aspect-[16/9] mb-12 rounded-xl overflow-hidden shadow-2xl border border-white/10 group">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Modern analytics dashboard interface with purple charts" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC28RzSOnnia0AxZhbHFInkYreFYXdzZLsNzlKrnF8SedRE6er_FcDhbVOZLBIgYy3YTdpsdeNWKw2nL2qTGLyzjxgz-rOwfA9L_8H1CVOaUVqRAD7QnR6Hrr-MXmgGs6bNw7qrDsCUq_4OYKU6VaoQA9ZDCXl6A878YRmUDMjODc6Y02sw4a3cxrtrQQALAHP2rmIuPmuXSyMm_qZoBKNRH-m38GWcjdPiSDgwMPkaCovyGTCyQi7jVXzzPj_4Id81VaNtB6j6Qxw')">
+</div>
+<!-- Markers -->
+<!-- Marker A -->
+<div class="absolute top-[25%] left-[32%] z-10 group/marker">
+<div class="marker-pulse flex items-center justify-center size-10 rounded-full bg-primary text-white font-bold cursor-pointer">a</div>
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 opacity-0 group-hover/marker:opacity-100 transition-opacity bg-background-dark border border-primary/40 px-3 py-1 rounded text-xs whitespace-nowrap">Smart Filtering</div>
+</div>
+<!-- Marker B -->
+<div class="absolute top-[65%] left-[68%] z-10 group/marker">
+<div class="marker-pulse flex items-center justify-center size-10 rounded-full bg-primary text-white font-bold cursor-pointer" style="animation-delay: 0.5s">b</div>
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 opacity-0 group-hover/marker:opacity-100 transition-opacity bg-background-dark border border-primary/40 px-3 py-1 rounded text-xs whitespace-nowrap">Biometric Auth</div>
+</div>
+<!-- Marker C -->
+<div class="absolute bottom-[20%] left-[15%] z-10 group/marker">
+<div class="marker-pulse flex items-center justify-center size-10 rounded-full bg-primary text-white font-bold cursor-pointer" style="animation-delay: 1s">c</div>
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 opacity-0 group-hover/marker:opacity-100 transition-opacity bg-background-dark border border-primary/40 px-3 py-1 rounded text-xs whitespace-nowrap">Cloud Sync</div>
+</div>
+</div>
+<!-- Features Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl">
+<!-- Feature A -->
+<div class="flex flex-col gap-4 rounded-xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition-all group">
+<div class="flex items-center gap-3">
+<span class="flex items-center justify-center size-8 rounded-full bg-primary/20 text-primary font-bold text-sm">A</span>
+<h3 class="text-white text-lg font-bold">Smart Filtering</h3>
+</div>
+<p class="text-[#af9db9] text-sm leading-relaxed font-body">
+                        Our proprietary <span class="text-primary/80 font-medium">SortingEngine™</span> allows users to drill down through complex data silos in under 200ms. Perfect for high-frequency trading monitoring.
+                    </p>
+<div class="mt-auto pt-4 border-t border-white/5 flex items-center text-xs text-white/40 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm mr-2">bolt</span> Performance Focused
+                    </div>
+</div>
+<!-- Feature B -->
+<div class="flex flex-col gap-4 rounded-xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition-all group">
+<div class="flex items-center gap-3">
+<span class="flex items-center justify-center size-8 rounded-full bg-primary/20 text-primary font-bold text-sm">B</span>
+<h3 class="text-white text-lg font-bold">Biometric Auth</h3>
+</div>
+<p class="text-[#af9db9] text-sm leading-relaxed font-body">
+                        Native integration with FaceID and TouchID ensures a frictionless yet highly secure experience. Bank-grade encryption protecting sensitive financial assets.
+                    </p>
+<div class="mt-auto pt-4 border-t border-white/5 flex items-center text-xs text-white/40 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm mr-2">fingerprint</span> Secure Access
+                    </div>
+</div>
+<!-- Feature C -->
+<div class="flex flex-col gap-4 rounded-xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition-all group">
+<div class="flex items-center gap-3">
+<span class="flex items-center justify-center size-8 rounded-full bg-primary/20 text-primary font-bold text-sm">C</span>
+<h3 class="text-white text-lg font-bold">Cloud Sync</h3>
+</div>
+<p class="text-[#af9db9] text-sm leading-relaxed font-body">
+                        Real-time state persistence across platforms. Start an analysis on your desktop and finish it on the train with zero latency and full data integrity.
+                    </p>
+<div class="mt-auto pt-4 border-t border-white/5 flex items-center text-xs text-white/40 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm mr-2">cloud_sync</span> Multi-platform
+                    </div>
+</div>
+</div>
+<!-- Footer Action -->
+<div class="mt-12 flex gap-4">
+<button class="flex min-w-[180px] cursor-pointer items-center justify-center rounded-full h-12 px-6 bg-primary text-white text-sm font-bold tracking-wide hover:scale-105 transition-transform active:scale-95">
+                    View Live Project
+                </button>
+<button class="flex min-w-[180px] cursor-pointer items-center justify-center rounded-full h-12 px-6 border border-white/20 bg-transparent text-white text-sm font-bold tracking-wide hover:bg-white/5 transition-colors">
+                    Read Full Case Study
+                </button>
+</div>
+</div>
+</div>
+</body></html>
